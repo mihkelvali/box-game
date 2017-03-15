@@ -12,6 +12,7 @@ function draw() {
     background(50);
     reloadSquare();
     reloadObstacles();
+    detectCollision();
 }
 
 function reloadSquare() {
@@ -26,8 +27,18 @@ function reloadObstacles() {
     })
 }
 
+function detectCollision() {
+    
+}
+
 function keyPressed() {
     if (keyCode === 32 && !square.isJumping()) {
+        square.jump();
+    }
+}
+
+function touchStarted() {
+    if (!square.isJumping()) {
         square.jump();
     }
 }
