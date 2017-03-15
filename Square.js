@@ -12,6 +12,7 @@ function Square(x, y, h, w, horizontalSpeed, verticalSpeed) {
     this.update = function() {
         this.speed.add(this.acceleration);
         this.position.add(this.speed);
+        translate(- this.position.x + 150, 0);
     }
 
     this.show = function() {
@@ -20,7 +21,12 @@ function Square(x, y, h, w, horizontalSpeed, verticalSpeed) {
     }
 
     this.jump = function() {
-        this.speed.y = -5;
+        this.speed.y = -8;
+        
+    }
+
+    this.isJumping = function() {
+        return this.speed.y !== 0;
     }
 
     this.ground = function() {
